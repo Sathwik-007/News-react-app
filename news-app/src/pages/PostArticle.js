@@ -52,8 +52,10 @@ const PostArticle = () => {
   };
 
   const captureContentHandler = (event) => {
+    event.preventDefault();
     const content = event.target.value;
     setContent(content);
+    console.log(content)
   };
 
   return (

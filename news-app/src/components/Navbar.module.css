@@ -8,6 +8,7 @@
 
 .logo {
     width: 85%;
+    /* background-color: red; */
     margin: 0 auto;
     font-size: 3em;
     color: var(--primary-color);
@@ -42,6 +43,7 @@ a {
 
 .wallet_connect_success {
     width: 30%;
+    /* background-color: blue; */
     display: flex;
     align-items: center;
     justify-content: space-between;

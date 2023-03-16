@@ -51,6 +51,8 @@ const ArticleDetails = () => {
           <p className={classes.author}>
             <b>Author</b>: {article.author}
           </p>
+          {/* <p>likes:{article.likes.toString()}</p> */}
+          {/* <p>dislikes:{article.dislikes.toString()}</p> */}
           <p className={classes.timestamp}>
             {new Date(article.timestamp * 1000).toDateString()}
           </p>

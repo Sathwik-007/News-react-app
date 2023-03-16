@@ -66,6 +66,7 @@ const VotingModal = (props) => {
     setVoteSuccess(true);
     console.log("voted successfully");
   };
+
   const Modal = () => {
     return (
       <div className={classes.modal}>
