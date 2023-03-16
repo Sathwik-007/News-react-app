@@ -41,7 +41,7 @@ const VotingModal = (props) => {
 
   const likeHandler = async () => {
     const articleId = props.articleId;
-    console.log("Article id:", articleId);
+    // console.log("Article id:", articleId);
 
     const signer = await provider.getSigner();
 
@@ -55,7 +55,6 @@ const VotingModal = (props) => {
 
   const dislikeHandler = async () => {
     const articleId = props.articleId;
-    console.log("Article id:", articleId);
 
     const signer = await provider.getSigner();
 
@@ -65,24 +64,31 @@ const VotingModal = (props) => {
 
     vote.wait();
     setVoteSuccess(true);
+    console.log("voted successfully");
   };
   const Modal = () => {
     return (
       <div className={classes.modal}>
-        <button className={classes.like_button} onClick={likeHandler}>
-          <AiFillLike />
-          <br />
-          like
-          <br />
-          {props.likes}
-        </button>
-        <button className={classes.dislike_button} onClick={dislikeHandler}>
-          <AiFillDislike />
-          <br />
-          dislike
-          <br />
-          {props.dislikes}
-        </button>
+        {!voteSuccess && (
+          <>
+            <button className={classes.like_button} onClick={likeHandler}>
+              <AiFillLike />
+              <br />
+              like
+              <br />
+              {props.likes}
+            </button>
+            <button className={classes.dislike_button} onClick={dislikeHandler}>
+              <AiFillDislike />
+              <br />
+              dislike
+              <br />
+              {props.dislikes}
+            </button>
+          </>
+        )}
+        {voteSuccess && <h4>Thank you for voting</h4>}
+
       </div>
     );
   };

@@ -30,7 +30,7 @@ const MainContent = () => {
       articles.push(article);
     }
     setArticles(articles);
-    console.log(articles);
+    // console.log(articles);
 
     window.ethereum.on("accountsChanged", async () => {
       const accounts = await window.ethereum.request({

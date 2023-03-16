@@ -201,15 +201,6 @@ contract News {
         return votersList;
     }
 
-    /* function processArticlesAtIntervals() public {
-        for (uint i = 0; i <= maxArticleId; i++) {
-            if (lastProcessedTime[i] + 1 days <= block.timestamp) {
-                processArticle(i);
-                lastProcessedTime[i] = block.timestamp; // update last processed time
-            }
-        }
-    } */
-
     function totalArticles() public view returns(uint256) {
         return articleIds.current();
     }
