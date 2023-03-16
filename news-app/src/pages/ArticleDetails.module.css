@@ -1,0 +1,36 @@
+.container {
+    width: 90%;
+    margin: 50px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.title {
+    color: black;
+    font-size: 50px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.content {
+    padding-top: 25px;
+    color: black;
+    font-size: 20px;
+    text-align: start;
+}
+
+.author {
+    color: black;
+    padding-top: 10px;
+    text-decoration: underline;
+}
+
+.timestamp {
+    color: black;
+}
+
+hr {
+    width: 90%;
+    color: black;
+}

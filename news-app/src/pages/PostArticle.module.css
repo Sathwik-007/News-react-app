@@ -36,3 +36,11 @@
     height: 1000px;
 }
 
+.post_button {
+  width: 15vw;
+  height: 5vh;
+  border: none;
+  margin: 10px;
+  
+}
+
