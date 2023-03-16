@@ -1,0 +1,38 @@
+.container {
+  width: 100%;
+  margin: 0 auto;
+  background-color: white;
+  display: block;
+}
+
+.main_container {
+  margin: 10px auto;
+  width: 90%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+}
+*:focus {
+  outline: none;
+}
+.title textarea {
+    margin-top: 50px;
+    font-size: 40px;
+    width: 27em;
+    padding: 10px;
+    resize: none;
+    font-weight: bolder;
+    border-style: none;
+    background-color: transparent;
+}
+.content textarea {
+    background-color: transparent;
+    border-style: none;
+    resize: none;
+    font-size: 30px;
+    width: 36em;
+    padding: 10px;
+    height: 1000px;
+}
+
