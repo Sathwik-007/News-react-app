@@ -18,7 +18,7 @@ const Navbar = () => {
 
   const web3Modal = new Web3Modal({
     network: "goerli",
-    cacheProvider: false,
+    cacheProvider: true,
   });
   const connectWallet = async () => {
     try {
@@ -41,7 +41,7 @@ const Navbar = () => {
       setWalletConnected(false);
       setAddress("");
       setHidePostArticle(false);
-      web3Modal.clearCachedProvider();
+      // web3Modal.clearCachedProvider();
     }
   };
 

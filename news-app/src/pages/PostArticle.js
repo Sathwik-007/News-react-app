@@ -3,8 +3,10 @@ import NewsApp from "../abis/NewsApp.json";
 import config from "../config.json";
 import { ethers } from "ethers";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const PostArticle = () => {
+  const navigate = useNavigate();
   const [newsApp, setNewsApp] = useState(null);
   const [provider, setProvider] = useState(null);
   const [title, setTitle] = useState("");
@@ -32,7 +34,22 @@ const PostArticle = () => {
     init();
   }, []);
 
-  const postArticleHandler = async () => {
+  
+  const captureTitleHandler = (event) => {
+    const title = event.target.value;
+    setTitle(title);
+
+  };
+
+  const captureContentHandler = (event) => {
+    const content = event.target.value;
+    setContent(content);
+
+  };
+  
+  const postArticleHandler = async (event) => {
+    event.preventDefault();
+    console.log("postarticlehandler")
     if (title.length >= 3 && content.length >= 10) {
       const signer = await provider.getSigner();
 
@@ -42,24 +59,11 @@ const PostArticle = () => {
 
       vote.wait();
     }
-  };
-
-  const captureTitleHandler = (event) => {
-    event.preventDefault();
-    const title = event.target.value;
-    setTitle(title);
-    console.log(title)
-  };
-
-  const captureContentHandler = (event) => {
-    event.preventDefault();
-    const content = event.target.value;
-    setContent(content);
-    console.log(content)
+    navigate("/");
   };
 
   return (
-    <form className={classes.container}>
+    <form onSubmit={postArticleHandler} className={classes.container}>
       <div className={classes.main_container}>
         {/* input for title */}
         <div className={classes.title}>
@@ -80,7 +84,7 @@ const PostArticle = () => {
         {/* image upload button */}
 
         {/* post article button */}
-        <button onClick={postArticleHandler} className={classes.post_button}>
+        <button type="submit" className={classes.post_button}>
           Post
         </button>
       </div>

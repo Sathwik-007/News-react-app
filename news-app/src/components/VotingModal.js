@@ -6,12 +6,14 @@ import { ethers } from "ethers";
 import NewsApp from "../abis/NewsApp.json";
 import config from "../config.json";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const tokens = (n) => {
   return ethers.utils.parseUnits(n.toString(), "ether");
 };
 
 const VotingModal = (props) => {
+  const navigate = useNavigate();
   const [newsApp, setNewsApp] = useState(null);
   const [provider, setProvider] = useState(null);
   const [voteSuccess, setVoteSuccess] = useState(false);
@@ -88,8 +90,13 @@ const VotingModal = (props) => {
             </button>
           </>
         )}
-        {voteSuccess && <h4>Thank you for voting</h4>}
-
+        {voteSuccess && (
+          <>
+            <h4>Thank you for voting</h4>
+            {/* <button>back to home</button> */}
+            {setTimeout(() => {navigate("/")}, 2000)}
+          </>
+        )}
       </div>
     );
   };

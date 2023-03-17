@@ -34,3 +34,11 @@ hr {
     width: 90%;
     color: black;
 }
+
+.vote_button {
+    background-color: rgb(12, 123, 12);
+    border: none;
+    padding: 13px;
+    color: white;
+    border-radius: 5px;
+}
