@@ -1,5 +1,8 @@
 .left_div {
   width: 30%;
+  background-color: var(--card-primary-dark);
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .left_div input {
@@ -7,6 +10,7 @@
   border: none;
   width: 90%;
   padding: 10px 20px;
+  margin-top: 20px;
   border-radius: 20px;
   box-shadow: 0px 3px 18px rgba(0, 0, 0, 0.2);
 }

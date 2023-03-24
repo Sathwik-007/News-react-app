@@ -56,6 +56,8 @@ const ArticleDetails = () => {
           <p className={classes.timestamp}>
             {new Date(article.timestamp * 1000).toDateString()}
           </p>
+          <p>{article.category}</p>
+          <p>{article.image}</p>
           <p className={classes.content}>{article.content}</p>
           <hr />
           <button className={classes.vote_button} onClick={onModalClickEnable}>Vote for legitimacy?</button>

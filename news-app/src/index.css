@@ -6,10 +6,14 @@
   --global-font: 'Poppins', sans-serif;;
   --side-cards: rgb(238,238,239);
   --primary-color: rgb(73, 61, 138);
+  --primary-dark-color: rgb(113, 95, 214);
   --secondary-color: rgb(238,238,239);
   --search-icon-size: 1.75rem;
   --search-icon-margin-left: 8px;
   --search-icon-color: var(--primary-color);
+  --card-primary-dark: rgb(31,30,30);
+  --app-background-dark: rgb(41,42,45);
+
 }
 
 * {
@@ -21,7 +25,7 @@
 body {
   margin: 0;
   /* background: rgb(41,42,45); */
-  background: var(--app-background);
+  background: var(--app-background-dark);
   font-family: var(--global-font);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

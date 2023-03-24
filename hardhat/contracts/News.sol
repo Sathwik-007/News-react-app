@@ -16,7 +16,9 @@ contract News {
         uint articleId;
         string title;
         string content;
-        uint timestamp; 
+        string category;
+        string image;
+        uint timestamp;
         address author;
         uint likes;
         uint dislikes;
@@ -48,6 +50,7 @@ contract News {
     event NewArticle(
         uint indexed articleId, 
         string title, 
+        string category,
         uint timestamp, 
         address indexed author
     );
@@ -86,7 +89,9 @@ contract News {
 
     function postArticle(
         string memory title, 
-        string memory content
+        string memory content,
+        string memory category,
+        string memory image
     ) public payable requirePostStake {
         articleIds.increment();
         
@@ -95,6 +100,8 @@ contract News {
             articleId: articleId,
             title: title,
             content: content,
+            category: category,
+            image: image,
             timestamp: block.timestamp,
             author: msg.sender,
             likes: 0,
@@ -105,7 +112,7 @@ contract News {
         stakedAmounts[msg.sender] += msg.value;
         lastProcessedTime[articleId] = block.timestamp;
 
-        emit NewArticle(articleId, title, block.timestamp, msg.sender);
+        emit NewArticle(articleId, title, category, block.timestamp, msg.sender);
     }
 
     function getArticle(uint articleId) external view returns (Article memory) {

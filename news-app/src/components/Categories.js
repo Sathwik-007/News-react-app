@@ -1,24 +1,29 @@
 import classes from "./Categories.module.css";
 
 const CATEGORIES = [
+  "All",
   "World",
   "Technology",
   "Politics",
   "Finance",
-  "Sports",
+  "Health",
   "Travel",
 ];
 
-const Categories = () => {
+const Categories = (props) => {
+  const captureCategory = (event) => {
+    const category = event.target.innerHTML;
+    props.category(category);
+  }
   return (
-    <div className={classes.side_card}>
+    <div className={classes.category_side_card}>
       <h4>Categories</h4>
       <br />
       {CATEGORIES.map((category) => (
-        <>
-          <h6>{category}</h6>
-          <hr />
-        </>
+        <div key={category}>
+          <button onClick={captureCategory}>{category}</button>
+          <hr></hr>
+        </div>
       ))}
     </div>
   );

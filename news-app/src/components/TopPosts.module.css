@@ -1,17 +1,17 @@
 .side_card {
-  background-color: var(--secondary-color);
+  background-color: transparent;
   padding: 20px;
   border-radius: 7px;
-  margin-top: 40px;
 }
 
-h4 {
-    margin: 20px 0px;
-    color: var(--primary-color);
+.side_card h4 {
+    /* margin-top: 10px; */
+    margin-bottom: 20px;
+    color: var(--primary-dark-color);
     font-weight: 800;
 }
 h6 {
-  color: var(--primary-color);
+  color: var(--primary-dark-color);
   font-weight: 800;
 }
 
@@ -21,19 +21,32 @@ ol {
 }
 li {
   counter-increment: item;
+  transition: all 0.6s;
+  border-radius: 4px;
+  padding: 5px;
 }
 li:before {
   content: counter(item);
   font-size: 2em;
-  color: black;
+  /* color: white; */
   text-decoration: none;
 }
 
 li:hover {
-    text-decoration: underline;
-    /* cursor: pointer; */
+    /* text-decoration: underline; */
+    translate: 10px 0px;
+    background-color: white;
+    color: black;
 }
 
 span, p {
     color: grey;
+}
+
+hr {
+  color: white;
+}
+
+.side_card a:hover {
+  text-decoration: none;
 }

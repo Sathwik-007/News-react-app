@@ -1,6 +1,6 @@
 import classes from "./Navbar.module.css";
 import { SiDesignernews } from "react-icons/si";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Web3Modal from "web3modal";
 import { AiFillCaretDown } from "react-icons/ai";
 import { MdOutlineCreate } from "react-icons/md";
@@ -8,8 +8,6 @@ import { BiLink } from "react-icons/bi";
 import { Link } from "react-router-dom";
 
 import { ethers } from "ethers";
-import NewsApp from "../abis/NewsApp.json";
-import config from "../config.json";
 
 const Navbar = () => {
   const [address, setAddress] = useState("");

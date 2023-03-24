@@ -1,13 +1,13 @@
 .container {
     width: 90%;
     margin: 50px auto;
-    background-color: white;
+    background-color: var(--app-background-dark);
     padding: 20px;
     border-radius: 10px;
 }
 
 .title {
-    color: black;
+    color: white;
     font-size: 50px;
     font-weight: bolder;
     text-align: center;
@@ -15,19 +15,19 @@
 
 .content {
     padding-top: 25px;
-    color: black;
+    color: white;
     font-size: 20px;
     text-align: start;
 }
 
 .author {
-    color: black;
+    color: white;
     padding-top: 10px;
     text-decoration: underline;
 }
 
 .timestamp {
-    color: black;
+    color: white;
 }
 
 hr {

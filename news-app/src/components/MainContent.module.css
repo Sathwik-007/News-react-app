@@ -1,14 +1,22 @@
 
+img {
+  height: 300px;
+  width: 98%;
+  border-radius: 4px;
+  margin: 4px;
+  /* border-bottom-right-radius: 4px; */
+}
+
 .card {
   flex-basis: calc(50% - 10px);
   margin: 5px;
-  background-color: white;
+  background-color: var(--card-primary-dark);
   border-radius: 7px;
 }
 
 h5,
 .author,
 .timestamp {
-  padding-left: 10px;
-  color: black;
+  padding: 10px;
+  color: white;
 }
