@@ -17,11 +17,6 @@ const VotingModal = (props) => {
   const [newsApp, setNewsApp] = useState(null);
   const [provider, setProvider] = useState(null);
   const [voteSuccess, setVoteSuccess] = useState(false);
-  const Backdrop = () => {
-    return (
-      <div onClick={props.onModalClick} className={classes.backdrop}></div>
-    );
-  };
 
   const init = async () => {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
@@ -69,6 +64,12 @@ const VotingModal = (props) => {
     console.log("voted successfully");
   };
 
+  const Backdrop = () => {
+    return (
+      <div onClick={props.onModalClick} className={classes.backdrop}></div>
+    );
+  };
+
   const Modal = () => {
     return (
       <div className={classes.modal}>
@@ -94,7 +95,9 @@ const VotingModal = (props) => {
           <>
             <h4>Thank you for voting</h4>
             {/* <button>back to home</button> */}
-            {setTimeout(() => {navigate("/")}, 2000)}
+            {setTimeout(() => {
+              navigate("/");
+            }, 2000)}
           </>
         )}
       </div>

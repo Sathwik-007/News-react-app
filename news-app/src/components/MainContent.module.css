@@ -1,22 +1,33 @@
-
-img {
+.image {
   height: 300px;
   width: 98%;
   border-radius: 4px;
   margin: 4px;
-  /* border-bottom-right-radius: 4px; */
+  position: relative;
+  object-fit: cover;
+}
+.card:hover {
+  transform: scale(0.9);
 }
 
 .card {
-  flex-basis: calc(50% - 10px);
+  flex-basis: calc(48% - 5px);
   margin: 5px;
+  height: 550px;
   background-color: var(--card-primary-dark);
   border-radius: 7px;
+  transition: all 0.7s;
+  transition-delay: 0.2s;
+  position: relative;
+  overflow: hidden;
 }
-
 h5,
 .author,
 .timestamp {
-  padding: 10px;
+  padding: 10px 10px;
+  color: white;
+}
+
+.timestamp {
   color: white;
 }

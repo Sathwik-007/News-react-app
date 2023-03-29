@@ -13,21 +13,17 @@
   display: block;
   color: var(--primary-dark-color);
   width: 100%;
-  /* margin: 0 auto; */
   text-align: left;
   background-color: transparent;
   border: none;
-  /* border-top: none;
-    border-left: none;
-    border-right: none;*/
-  /* border-bottom: 1px solid white; */
+    border-radius: 4px;
+  border-bottom: 1px solid whitesmoke;
   margin-bottom: 15px;
   padding: 10px;
 }
 .category_side_card div {
   transition: all 0.7s;
   border-radius: 4px;
-  /* width: 90%; */
 }
 
 .category_side_card div:hover {

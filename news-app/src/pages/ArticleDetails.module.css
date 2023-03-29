@@ -1,44 +1,62 @@
 .container {
-    width: 90%;
-    margin: 50px auto;
-    background-color: var(--app-background-dark);
-    padding: 20px;
-    border-radius: 10px;
+  width: 90%;
+  margin: 50px auto;
+  background-color: var(--app-background-dark);
+  padding: 20px;
+  border-radius: 10px;
+}
+.content_div {
+    margin-top: 200px;
+}
+.image_div {
+  height: 600px;
+  width: 100%;
+  object-fit: fill;
+}
+
+.image {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 .title {
-    color: white;
-    font-size: 50px;
-    font-weight: bolder;
-    text-align: center;
+  color: white;
+  font-size: 50px;
+  font-weight: bolder;
+  text-align: center;
 }
 
 .content {
-    padding-top: 25px;
-    color: white;
-    font-size: 20px;
-    text-align: start;
+  padding-top: 25px;
+  color: white;
+  font-size: 20px;
+  text-align: start;
+  
 }
 
 .author {
-    color: white;
-    padding-top: 10px;
-    text-decoration: underline;
+  color: white;
+  padding-top: 10px;
+  text-decoration: underline;
 }
 
 .timestamp {
-    color: white;
+  color: white;
 }
 
 hr {
-    width: 90%;
-    color: black;
+  width: 90%;
+  color: white;
 }
 
 .vote_button {
-    background-color: rgb(12, 123, 12);
-    border: none;
-    padding: 13px;
-    color: white;
-    border-radius: 5px;
+  background-color: rgb(12, 123, 12);
+  border: none;
+  padding: 13px;
+  color: white;
+  border-radius: 5px;
 }

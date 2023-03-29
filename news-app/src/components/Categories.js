@@ -22,7 +22,7 @@ const Categories = (props) => {
       {CATEGORIES.map((category) => (
         <div key={category}>
           <button onClick={captureCategory}>{category}</button>
-          <hr></hr>
+          {/* <hr></hr> */}
         </div>
       ))}
     </div>

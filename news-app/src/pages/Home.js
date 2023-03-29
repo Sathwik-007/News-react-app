@@ -6,13 +6,14 @@ import { useState } from "react";
 const HomePage = () => {
   const [category, setCategory] = useState("");
   const [topPosts, setTopPosts] = useState([]);
+
   const setCategoryHandler = (category) => {
     setCategory(category);
     console.log(category);
-  }
+  };
   const articlesThroughProps = (articles) => {
-    let posts = []
-    for(let i = 0; i < 5; i++) {
+    let posts = [];
+    for (let i = 0; i < 5; i++) {
       posts.push(articles[i]);
     }
     /**
@@ -20,12 +21,15 @@ const HomePage = () => {
      */
     setTopPosts(posts);
     // console.log(topPosts);
-  }
+  };
   return (
     <div className={classes.main_content}>
-      <Sidebar topPosts={topPosts} choosenCategory={setCategoryHandler}/>
+      <Sidebar topPosts={topPosts} choosenCategory={setCategoryHandler} />
       <div className={classes.right_div}>
-        <MainContent articles={articlesThroughProps} selectedCategory={category} />
+        <MainContent
+          articles={articlesThroughProps}
+          selectedCategory={category}
+        />
       </div>
     </div>
   );

@@ -1,5 +1,4 @@
 .container {
-    /* height: 150px; */
     width: 100%;
     background: var(--card-primary-dark);
     border-radius: 10px;
@@ -43,7 +42,6 @@ a {
 
 .wallet_connect_success {
     width: 30%;
-    /* background-color: blue; */
     display: flex;
     align-items: center;
     justify-content: space-between;

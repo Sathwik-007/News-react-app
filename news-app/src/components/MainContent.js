@@ -10,7 +10,6 @@ import Loading from "./Loading";
 
 const MainContent = (props) => {
   const [articles, setArticles] = useState(null);
-  // const [filteredArticles, setFilteredArticles] = useState(null);
   const [account, setAccount] = useState(null);
   const selectedCategory = props.selectedCategory;
 
@@ -35,7 +34,6 @@ const MainContent = (props) => {
     }
     setArticles(articles);
     props.articles(articles);
-    // setFilteredArticles(articles);
     window.ethereum.on("accountsChanged", async () => {
       const accounts = await window.ethereum.request({
         method: "eth_requestAccounts",
@@ -62,10 +60,14 @@ const MainContent = (props) => {
           .map((article) => (
             <div className={classes.card} key={article.articleId}>
               <Link to={`articles/${article.articleId}`}>
-                <img src={article.image} alt={`${article.articleId}`} />
+                <img
+                  className={classes.image}
+                  src={article.image}
+                  alt={`${article.articleId}`}
+                />
                 <h5>{article.title}</h5>
                 <p className={classes.author}>
-                  <u>Author:</u> {article.author}
+                  <u>Author:</u> {article.author.slice(0, 25)}...
                 </p>
                 <span className={classes.timestamp}>
                   {new Date(article.timestamp * 1000).toDateString()}

@@ -1,15 +1,14 @@
 .container {
   width: 100%;
-  margin: 0 auto;
-  background-color: var(--app-background-dark);
+  background-color: transparent;
   display: block;
 }
 
 .main_container {
-  margin: 10px auto;
+  margin: 40px auto;
   width: 90%;
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
 }
@@ -18,30 +17,59 @@
 }
 .title textarea {
   color: white;
-    margin-top: 50px;
-    font-size: 40px;
-    width: 27em;
-    padding: 10px;
-    resize: none;
-    font-weight: bolder;
-    border-style: none;
-    background-color: transparent;
+  /* text-align: center; */
+  margin-top: 50px;
+  font-size: 40px;
+  width: 27em;
+  padding: 10px;
+  resize: none;
+  font-weight: bolder;
+  border-style: none;
+  background-color: transparent;
+}
+
+.category input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  height: 100px;
+  width: 300px;
+  font-size: 1.5em;
+  margin-right: 750px;
 }
 
 .upload_image {
   color: white;
+  margin-top: 50px;
+  margin-left: 700px;
+  margin-bottom: 50px;
+  padding: 20px;
 }
 
+.upload_image label {
+  background-color: paleturquoise;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: black;
+  letter-spacing: 0.05em;
+  transition: all 0.35s;
+}
+.upload_image label:hover {
+  background-color: rgb(118, 199, 199);
+}
 
 .content textarea {
   color: white;
-    background-color: transparent;
-    border-style: none;
-    resize: none;
-    font-size: 30px;
-    width: 36em;
-    padding: 10px;
-    height: 1000px;
+  background-color: transparent;
+  border-style: none;
+  resize: none;
+  font-size: 30px;
+  width: 36em;
+  padding: 10px;
+  height: 800px;
 }
 
 .post_button {
@@ -49,6 +77,14 @@
   height: 5vh;
   border: none;
   margin: 10px;
-  
+  border-radius: 4px;
+  color: white;
+  font-weight: 600;
+  background-color: var(--primary-dark-color);
+  letter-spacing: 0.08em;
+  transition: all 0.35s;
 }
 
+.post_button:hover {
+  background-color: rgb(87, 29, 153);
+}
