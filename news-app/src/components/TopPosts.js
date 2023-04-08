@@ -6,7 +6,7 @@ const TopPosts = (props) => {
   return (
     <div className={classes.side_card}>
       <h4>Top Posts</h4>
-      <ol>
+      <ol className={classes.top_posts}>
         {TOP_POSTS.map((post) => (
           <Link to={`articles/${post.articleId}`} key={post.articleId}>
             <li>

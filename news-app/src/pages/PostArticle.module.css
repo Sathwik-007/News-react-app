@@ -17,7 +17,6 @@
 }
 .title textarea {
   color: white;
-  /* text-align: center; */
   margin-top: 50px;
   font-size: 40px;
   width: 27em;
@@ -41,9 +40,8 @@
 
 .upload_image {
   color: white;
-  margin-top: 50px;
-  margin-left: 700px;
-  margin-bottom: 50px;
+  margin: 50px 0px;
+  margin-left: 60vw;
   padding: 20px;
 }
 

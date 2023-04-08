@@ -16,26 +16,6 @@ const MessageModal = (props) => {
       <>
         {props.displayStakeMessage ? (
           <div className={classes.message_modal}>
-            <h1>{props.title}</h1>
-            <span
-              className={classes.emotes}
-              dangerouslySetInnerHTML={{
-                __html: props.emoteArray[0],
-              }}
-            />
-            <h5>{props.content}</h5>
-            <button className={classes.fix_button} onClick={props.onModalClick}>
-              Fix it!
-              <span
-                className={classes.repair_emote}
-                dangerouslySetInnerHTML={{
-                  __html: "&#x1f6e0;&#xfe0f;",
-                }}
-              />
-            </button>
-          </div>
-        ) : (
-          <div className={classes.message_modal}>
             <h1 className={classes.emphasize}>
               Note
               <span
@@ -53,6 +33,26 @@ const MessageModal = (props) => {
               Final stake may vary with including{" "}
               <span className={classes.emphasize_price}> gas fee</span>.
             </h5>
+          </div>
+        ) : (
+          <div className={classes.message_modal}>
+            <h1>{props.title}</h1>
+            <span
+              className={classes.emotes}
+              dangerouslySetInnerHTML={{
+                __html: props.emoteArray[0],
+              }}
+            />
+            <h5>{props.content}</h5>
+            <button className={classes.fix_button} onClick={props.onModalClick}>
+              Fix it!
+              <span
+                className={classes.repair_emote}
+                dangerouslySetInnerHTML={{
+                  __html: "&#x1f6e0;&#xfe0f;",
+                }}
+              />
+            </button>
           </div>
         )}
       </>

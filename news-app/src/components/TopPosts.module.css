@@ -15,24 +15,24 @@ h6 {
   font-weight: 800;
 }
 
-ol {
+.top_posts {
   list-style: none;
   counter-reset: item;
 }
-li {
+.top_posts li {
   counter-increment: item;
   transition: all 0.6s;
   border-radius: 4px;
   padding: 5px;
 }
-li:before {
+.top_posts li:before {
   content: counter(item);
   font-size: 2em;
   /* color: white; */
   text-decoration: none;
 }
 
-li:hover {
+.top_posts li:hover {
     /* text-decoration: underline; */
     translate: 10px 0px;
     background-color: white;

@@ -22,8 +22,10 @@ const PostArticle = () => {
 
   const [overlay, setOverlay] = useState(false);
   const [postSuccess, setPostSuccess] = useState(false);
+  const [showStake, setShowStake] = useState(true);
   const [loading, setLoading] = useState(false);
   const disableOverlay = () => {
+    setShowStake(false);
     setOverlay(false);
   };
   const enableOverlay = () => {
@@ -219,6 +221,7 @@ const PostArticle = () => {
         {overlay ? (
           <MessageModal
             onModalClick={disableOverlay}
+            displayStakeMessage={showStake}
             title={messageTitle}
             content={messageContent}
             emoteArray={emoteArray}

@@ -8,11 +8,13 @@ import { BiLink } from "react-icons/bi";
 import { Link } from "react-router-dom";
 
 import { ethers } from "ethers";
+import MessageModal from "./MessageModal";
 
 const Navbar = () => {
   const [address, setAddress] = useState("");
   const [walletConnected, setWalletConnected] = useState(false);
   const [hidePostArticle, setHidePostArticle] = useState(false);
+  const [showLogoutModal, setShowLogoutModal] = useState(false);
 
   const web3Modal = new Web3Modal({
     network: "goerli",
@@ -39,14 +41,22 @@ const Navbar = () => {
       setWalletConnected(false);
       setAddress("");
       setHidePostArticle(false);
+      setIsOpen(false);
       // web3Modal.clearCachedProvider();
     }
+    setShowLogoutModal(true);
   };
 
   const hidePostArticleButton = () => {
     setHidePostArticle(true);
   };
 
+  const [isOpen, setIsOpen] = useState(false);
+
+  const setIsOpenHandler = () => {
+    if (!isOpen) setIsOpen(true);
+    else setIsOpen(false);
+  };
   const renderButton = () => {
     if (walletConnected) {
       return (
@@ -61,10 +71,16 @@ const Navbar = () => {
               </Link>
             </button>
           )}
-          <button className={classes.wallet_connected} onClick={logoutHandler}>
-            <p className={classes.user_address}>
+          <button className={classes.wallet_connected}>
+            <p className={classes.user_address} onClick={setIsOpenHandler}>
               {address.slice(0, 8)}... <AiFillCaretDown />
             </p>
+            {isOpen ? (
+              <div className={classes.menu_dropdown}>
+                <li>view staked articles</li>
+                <li onClick={logoutHandler}>disconnect wallet</li>
+              </div>
+            ) : undefined}
           </button>
         </div>
       );
@@ -82,7 +98,7 @@ const Navbar = () => {
       <div className={classes.logo}>
         <SiDesignernews />
         {renderButton()}
-        {/* <button onClick={connectWalletHandler} className={classes.connect_wallet}>connect wallet</button> */}
+        {showLogoutModal ? <MessageModal logoutWarning={true} title={"Disconnect wallet"} message={"Are you sure you want to disconnect your wallet?. You can reconnect if you change your mind tho"} /> : undefined}
       </div>
     </div>
   );
