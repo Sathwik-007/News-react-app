@@ -8,6 +8,7 @@
   display: inline;
   font-family: 'Courier Prime', monospace;
   font-weight: 800;
+  z-index: 1;
 }
 
 .message_modal {
@@ -20,6 +21,7 @@
   width: 60%;
   border-radius: 10px;
   text-align: center;
+  z-index: 1;
 }
 
 .message_modal h1 {
@@ -44,6 +46,16 @@
   padding: 10px 15px;
   margin-top: 10px;
   background-color: rgb(39, 159, 39);
+  color: white;
+  border-radius: 4px;
+  transition: all 0.7s;
+}
+
+.disconnect_button {
+  border: none;
+  padding: 10px 15px;
+  margin-top: 10px;
+  background-color: rgb(159, 39, 39);
   color: white;
   border-radius: 4px;
   transition: all 0.7s;

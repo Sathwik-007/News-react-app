@@ -222,6 +222,7 @@ const PostArticle = () => {
           <MessageModal
             onModalClick={disableOverlay}
             displayStakeMessage={showStake}
+            logoutWarning={false}
             title={messageTitle}
             content={messageContent}
             emoteArray={emoteArray}

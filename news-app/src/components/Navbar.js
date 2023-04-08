@@ -33,29 +33,27 @@ const Navbar = () => {
     }
   };
 
-  const logoutHandler = () => {
-    const disconnect = window.confirm(
-      "Are you sure you want to disconnect your wallet?"
-    );
-    if (disconnect) {
-      setWalletConnected(false);
-      setAddress("");
-      setHidePostArticle(false);
-      setIsOpen(false);
-      // web3Modal.clearCachedProvider();
-    }
+  const confirmLogoutHandler = () => {
     setShowLogoutModal(true);
+  };
+
+  const logoutHandler = () => {
+    setOptionsAreOpen(false);
+    setWalletConnected(false);
+    setAddress("");
+    setHidePostArticle(false);
+    setShowLogoutModal(false);
   };
 
   const hidePostArticleButton = () => {
     setHidePostArticle(true);
   };
 
-  const [isOpen, setIsOpen] = useState(false);
+  const [OptionsAreOpen, setOptionsAreOpen] = useState(false);
 
   const setIsOpenHandler = () => {
-    if (!isOpen) setIsOpen(true);
-    else setIsOpen(false);
+    if (!OptionsAreOpen) setOptionsAreOpen(true);
+    else setOptionsAreOpen(false);
   };
   const renderButton = () => {
     if (walletConnected) {
@@ -75,10 +73,10 @@ const Navbar = () => {
             <p className={classes.user_address} onClick={setIsOpenHandler}>
               {address.slice(0, 8)}... <AiFillCaretDown />
             </p>
-            {isOpen ? (
+            {OptionsAreOpen ? (
               <div className={classes.menu_dropdown}>
                 <li>view staked articles</li>
-                <li onClick={logoutHandler}>disconnect wallet</li>
+                <li onClick={confirmLogoutHandler}>disconnect wallet</li>
               </div>
             ) : undefined}
           </button>
@@ -98,7 +96,21 @@ const Navbar = () => {
       <div className={classes.logo}>
         <SiDesignernews />
         {renderButton()}
-        {showLogoutModal ? <MessageModal logoutWarning={true} title={"Disconnect wallet"} message={"Are you sure you want to disconnect your wallet?. You can reconnect if you change your mind tho"} /> : undefined}
+        {showLogoutModal ? (
+          <MessageModal
+            displayStakeMessage={false}
+            onModalClick={() => {
+              setShowLogoutModal(false);
+              setOptionsAreOpen(false);
+            }}
+            logoutWarning={true}
+            title={"Disconnect wallet"}
+            content={
+              "Are you sure you want to disconnect your wallet?. You can reconnect if you change your mind tho 👍"
+            }
+            logout={logoutHandler}
+          />
+        ) : undefined}
       </div>
     </div>
   );

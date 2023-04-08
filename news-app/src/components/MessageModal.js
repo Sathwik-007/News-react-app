@@ -14,7 +14,14 @@ const MessageModal = (props) => {
   const Modal = () => {
     return (
       <>
-        {props.displayStakeMessage ? (
+        {!props.displayStakeMessage && props.logoutWarning ? (
+          <div className={classes.message_modal}>
+            <h1>{props.title}</h1>
+            <br />
+            <h5>{props.content}</h5>
+            <button onClick={props.logout} className={classes.disconnect_button}>disconnect</button>
+          </div>
+        ) : props.displayStakeMessage && !props.logoutWarning ? (
           <div className={classes.message_modal}>
             <h1 className={classes.emphasize}>
               Note
