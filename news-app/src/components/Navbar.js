@@ -7,6 +7,9 @@ import { MdOutlineCreate } from "react-icons/md";
 import { BiLink } from "react-icons/bi";
 import { Link } from "react-router-dom";
 
+import NewsApp from "../abis/NewsApp.json";
+import config from "../config.json";
+
 import { ethers } from "ethers";
 import MessageModal from "./MessageModal";
 
@@ -16,15 +19,29 @@ const Navbar = () => {
   const [hidePostArticle, setHidePostArticle] = useState(false);
   const [showLogoutModal, setShowLogoutModal] = useState(false);
 
-  const web3Modal = new Web3Modal({
-    network: "goerli",
-    cacheProvider: true,
-  });
+  // const web3Modal = new Web3Modal({
+  //   network: "goerli",
+  //   cacheProvider: true,
+  // });
   const connectWallet = async () => {
     try {
-      const provider = await web3Modal.connect();
-      const ethersProvider = new ethers.providers.Web3Provider(provider);
-      const signer = ethersProvider.getSigner();
+      // const provider = await web3Modal.connect();
+      // const ethersProvider = new ethers.providers.Web3Provider(provider);
+      // const signer = ethersProvider.getSigner();
+      // const userAddress = await signer.getAddress();
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+
+      const network = await provider.getNetwork();
+
+      const signer = await provider.getSigner();
+
+      // const vote = await newsApp.connect(signer).postArtcile
+
+      const newsApp = new ethers.Contract(
+        config[network.chainId].newsApp.address,
+        NewsApp,
+        provider
+      );
       const userAddress = await signer.getAddress();
       setAddress(userAddress);
       setWalletConnected(true);

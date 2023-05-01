@@ -218,7 +218,7 @@ const PostArticle = () => {
         <button type="submit" className={classes.post_button}>
           {loading ? "Please Wait ..." : "Post"}
         </button>
-        {overlay ? (
+        {overlay && !postSuccess ? (
           <MessageModal
             onModalClick={disableOverlay}
             displayStakeMessage={showStake}

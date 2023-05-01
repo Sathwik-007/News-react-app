@@ -16,9 +16,9 @@ const Sidebar = (props) => {
 
   return (
     <div className={classes.left_div}>
-      <label htmlFor="search_bar"></label>
+      {/* <label htmlFor="search_bar"></label>
       <input id="search_bar" type="text" placeholder="Search..." />
-      <BiSearchAlt2 style={search_icon_style} />
+      <BiSearchAlt2 style={search_icon_style} /> */}
       <Categories category={filterBy} />
       <TopPosts topPosts={props.topPosts}/>
     </div>

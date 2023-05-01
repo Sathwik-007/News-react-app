@@ -9,7 +9,6 @@ const HomePage = () => {
 
   const setCategoryHandler = (category) => {
     setCategory(category);
-    console.log(category);
   };
   const articlesThroughProps = (articles) => {
     let posts = [];
