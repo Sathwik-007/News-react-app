@@ -75,30 +75,43 @@ const VotingModal = (props) => {
       <div className={classes.modal}>
         {!voteSuccess && (
           <>
+            <h1>
+              Before you vote, please be aware that this process involves stake
+              of <u>0.001 ETH</u>.
+            </h1>
+            <h5>
+              We recommend that you only vote if you are confident in your
+              knowledge of the article's content and you genuinely believe it is
+              legitimate 🧑‍⚖️. Your vote has the potential to impact the
+              credibility of the article and the platform as a whole. Thank you
+              for taking the time to consider your vote carefully.
+            </h5>
+            <br />
             <button className={classes.like_button} onClick={likeHandler}>
               <AiFillLike />
               <br />
-              like
+              <h4>upvote</h4>
               <br />
-              {props.likes}
+              <h6>{props.likes} people finds this true</h6>
             </button>
             <button className={classes.dislike_button} onClick={dislikeHandler}>
               <AiFillDislike />
               <br />
-              dislike
+              <h4>downvote</h4>
               <br />
-              {props.dislikes}
+              <h6>{props.dislikes} people finds this false</h6>
             </button>
           </>
         )}
         {voteSuccess && (
-          <>
-            <h4>Thank you for voting</h4>
+          <div className={classes.thanks_message}>
+            <h2>Thank you for voting</h2>
+            <h4>You will be shortly redirected to home page.</h4>
             {/* <button>back to home</button> */}
             {setTimeout(() => {
               navigate("/");
-            }, 2000)}
-          </>
+            }, 4000)}
+          </div>
         )}
       </div>
     );
